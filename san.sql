@@ -1,6 +1,6 @@
 CREATE DATABASE sanatorium;
 
-use sanatorium;
+USE sanatorium;
 
 CREATE TABLE users (
     userID int NOT NULL PRIMARY KEY,
