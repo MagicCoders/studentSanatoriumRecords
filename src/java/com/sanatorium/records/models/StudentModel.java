@@ -48,5 +48,4 @@ public class StudentModel {
             this.gender = gender;
         }
     }
-
 }
