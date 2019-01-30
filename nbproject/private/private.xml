@@ -3,8 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/wesleigh/NetBeansProjects/EgertonSanatorium/src/java/com/sanatorium/records/models/Staff.java</file>
-            <file>file:/home/wesleigh/NetBeansProjects/EgertonSanatorium/src/java/com/sanatorium/records/dataRepo/StudentRepo.java</file>
+            <file>file:/home/wesleigh/NetBeansProjects/EgertonSanatorium/src/java/com/sanatorium/records/controllers/CheifStaffController.java</file>
             <file>file:/home/wesleigh/NetBeansProjects/EgertonSanatorium/web/addStaff.jsp</file>
             <file>file:/home/wesleigh/NetBeansProjects/EgertonSanatorium/src/java/com/sanatorium/records/dataRepo/StaffRepo.java</file>
         </group>
