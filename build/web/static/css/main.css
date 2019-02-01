@@ -40,3 +40,6 @@ a{
 .invisible{
     display: none !important;
 }
+.box{
+    box-shadow: #fe385f;
+}

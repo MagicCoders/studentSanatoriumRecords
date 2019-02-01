@@ -5,24 +5,19 @@
     <title>Chief of Staff</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" type="text/css" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css"/>
-    <link rel="stylesheet" type="text/css" media="all" href="../static/css/main.css" th:href="@{/css/main.css}"/>
-    <link rel="stylesheet" type="text/css" media="all" href="../static/css/fontawesome.css"
+    <link rel="stylesheet" type="text/css" media="all" href="./static/css/main.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="./static/css/fontawesome.css"
           th:href="@{./css/fontawesome.css}"    />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     
-    <style>
-        body{
-            padding-top: 50px;
-        }
-    </style>
+   
     
 </head>
 
-<body class="layout-default">
-<form class="hero is-fullheight is-medium doctor-container" action="ChiefStaffController" method="GET">
-    <div class="columns is-centered">
-        <div class="column is-half">
-            <div class="box">
+<body class="container">
+<form class="hero is-normal" action="ChiefStaffController" method="GET">
+    <div class="column is-three-fifths">
+   
                 <div class="has-text-centered">
                     <h2 class="is-size-3 has-text-weight-light">Chief of Staff</h2>
                 </div>
@@ -154,9 +149,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            
+       </div>
+    
+   
 </form>
 </body>
 </html>
