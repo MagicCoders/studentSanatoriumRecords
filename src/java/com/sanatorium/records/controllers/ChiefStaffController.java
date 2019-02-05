@@ -5,6 +5,7 @@ import com.sanatorium.records.dataRepo.StaffRepo;
 import com.sanatorium.records.models.Staff;
 import java.io.IOException;
 import javax.annotation.Resource;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +28,7 @@ public class ChiefStaffController extends HttpServlet{
 	public void init() throws ServletException {
 		super.init();
 		
-		// create our student db util ... and pass in the conn pool / datasource
+		// create our staff db util ... and pass in the conn pool / datasource
 		try {
 			staffDB = new StaffRepo(dataSource);
 		}
@@ -65,7 +66,11 @@ public class ChiefStaffController extends HttpServlet{
 		Staff theStaff = new Staff(staffID,nationalID,fname,sname,othername,gender,role);
         
 		// add the staff to the database
-		staffDB.addStaff(theStaff);				
+		staffDB.addStaff(theStaff);
+                
+                //send back to the main page
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/addStaff.jsp");
+                dispatcher.forward(request,response);
 		
 	}
 	

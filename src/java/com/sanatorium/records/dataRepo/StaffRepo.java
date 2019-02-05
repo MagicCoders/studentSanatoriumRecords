@@ -65,8 +65,10 @@ public class StaffRepo {
 				myConn.close();   // doesn't really close it ... just puts back in connection pool
 			}
 		}
-		catch (Exception ex) {                    
+		catch (Exception ex) { 
+                    
 		}
+                
 	}
 	
 //	public List<Staff> getStaff() throws Exception {
