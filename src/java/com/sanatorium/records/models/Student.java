@@ -1,9 +1,6 @@
+package com.sanatorium.records.models;
 
-package models;
-
-
-public class StudentModel {
-    public class Student {
+public class Student {
     private String regNo;
    
     private String patientId;
@@ -48,6 +45,4 @@ public class StudentModel {
     public void setGender(Boolean gender) {
         this.gender = gender;
     }
-}
-    
 }
