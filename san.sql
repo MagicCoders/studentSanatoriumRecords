@@ -2,6 +2,8 @@ CREATE DATABASE sanatorium;
 
 use sanatorium;
 
+DROP TABLE IF EXISTS `users`;
+
 CREATE TABLE users (
     userID int NOT NULL PRIMARY KEY,
     name varchar(255),
@@ -11,13 +13,16 @@ CREATE TABLE users (
     role varchar(255)
 );
 
+DROP TABLE IF EXISTS `student`;
 CREATE TABLE student(
     regNO varchar(255) NOT NULL PRIMARY KEY,
     patientID  varchar(255),
-    name  varchar(255)
+    name  varchar(255),
+    gender varchar(11)
 );
 
-CREATE patientRecords(
+DROP TABLE IF EXISTS `patientRecords`;
+CREATE TABLE patientRecords(
     patientID  varchar(255) PRIMARY KEY,
     height int,
     age int,
