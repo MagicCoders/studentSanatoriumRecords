@@ -3,13 +3,13 @@ package com.sanatorium.records.models;
 public class Student {
     private String regNo;
    
-    private String patientId;
+    private String patientID;
     private String name;
-    private Boolean gender;
+    private String gender;
 
-    public Student(String regNo, String patientId, String name, Boolean gender) {
+    public Student(String regNo, String patientID, String name, String gender) {
         this.regNo = regNo;
-        this.patientId = patientId;
+        this.patientID = patientID;
         this.name = name;
         this.gender = gender;
     }
@@ -23,11 +23,11 @@ public class Student {
     }
 
     public String getPatientId() {
-        return patientId;
+        return patientID;
     }
 
-    public void setPatientId(String patientId) {
-        this.patientId = patientId;
+    public void setPatientId(String patientID) {
+        this.patientID = patientID;
     }
 
     public String getName() {
@@ -38,11 +38,11 @@ public class Student {
         this.name = name;
     }
 
-    public Boolean getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 }

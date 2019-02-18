@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import ="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 
@@ -102,7 +103,7 @@
                                             </a>
                                         </p>
                                         <p class="control is-expanded has-icons-right">
-                                            <input class="input is-primary has-text-primary" type="number" value="18"
+                                            <input class="input is-primary has-text-primary" type="number" value="${patient}"
                                                 readonly>
                                             <span class="icon is-small is-right">
                                                 Yrs
@@ -118,7 +119,7 @@
                                             </a>
                                         </p>
                                         <p class="control is-expanded has-icons-right">
-                                            <input class="input is-primary has-text-primary" type="number" value="18"
+                                            <input class="input is-primary has-text-primary" type="number" value="${patient}"
                                                 readonly>
                                             <span class="icon is-small is-right">
                                                 Kg
@@ -141,7 +142,7 @@
                                             </a>
                                         </p>
                                         <p class="control is-expanded has-icons-right">
-                                            <input class="input is-primary has-text-primary" type="number" value="18"
+                                            <input class="input is-primary has-text-primary" type="number" value="${patient}"
                                                 readonly>
                                             <span class="icon is-small is-right">
                                                 Mtrs
@@ -157,7 +158,7 @@
                                             </a>
                                         </p>
                                         <p class="control is-expanded has-icons-right">
-                                            <input class="input is-primary has-text-primary" type="number" value="18"
+                                            <input class="input is-primary has-text-primary" type="number" value="${patient}"
                                                 readonly>
                                             <span class="icon is-small is-right">
                                                 Kg/m
@@ -179,7 +180,7 @@
                                             </a>
                                         </p>
                                         <p class="control is-expanded has-icons-right">
-                                            <input class="input is-primary has-text-primary" type="number" value="18"
+                                            <input class="input is-primary has-text-primary" type="number" value="${patient}"
                                                 readonly>
                                             <span class="icon is-small is-right">
                                                 Deg
@@ -191,118 +192,119 @@
                         </div>
 
                         <hr>
-
-                        <div class="field is-horizontal">
-                            <div class="field-label is-normal">
-                                <label class="label">Symptoms:</label>
-                            </div>
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="control">
-                                        <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
-                                    </div>
+                        <form name="doctor" action="/EgertonSanatorium/doctor" method="POST">
+                            <div class="field is-horizontal">
+                                <div class="field-label is-normal">
+                                    <label class="label">Symptoms:</label>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="field is-horizontal invisible" id="prognosis">
-                            <div class="field-label is-normal">
-                                <label class="label">Prognosis:</label>
-                            </div>
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="control">
-                                        <textarea class="textarea" placeholder="Possible ailments"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="field is-horizontal invisible" id="tests">
-                            <div class="field-label is-normal">
-                                <label class="label">Tests:</label>
-                            </div>
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="control">
-                                        <textarea class="textarea" placeholder="Recommended tests"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="field is-horizontal invisible" id="diagnosis">
-                            <div class="field-label is-normal">
-                                <label class="label">Diagnosis:</label>
-                            </div>
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="control">
-                                        <textarea class="textarea" placeholder="Diagnosis"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="field is-horizontal invisible" id="prescription">
-                            <div class="field-label is-normal">
-                                <label class="label">Prescription:</label>
-                            </div>
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="control">
-                                        <textarea class="textarea" placeholder="Prescription"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="field is-horizontal" id="btn-container">
-                            <div class="field-label is-normal">
-                                <label class="label"></label>
-                            </div>
-                            <div class="field-body">
-                                <div class="field is-expanded">
+                                <div class="field-body">
                                     <div class="field">
-                                        <button id="btnLab" class="button is-primary">
-                                            Send to Lab
-                                        </button>
-                                        <button id="btnPharmacy" class="button is-primary">
-                                            Send to Pharmacy
-                                        </button>
+                                        <div class="control">
+                                            <textarea name="symptoms" class="textarea" placeholder="Explain how we can help you"></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="field is-horizontal">
-                            <div class="field-label is-normal">
-                                <label class="label">Doctor:</label>
-                            </div>
-                            <div class="field-body">
-                                <div class="field">
-                                    <p class="control is-expanded">
-                                        <input class="input is-primary has-text-primary" type="text" value="Doctor's Name"
-                                            readonly>
-                                    </p>
+                            <div class="field is-horizontal invisible" id="prognosis">
+                                <div class="field-label is-normal">
+                                    <label class="label">Prognosis:</label>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="field is-horizontal">
-                            <div class="field-label">
-                                <!-- Left empty for spacing -->
-                            </div>
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="control">
-                                        <button class="button is-primary">
-                                            Submit patient Details
-                                        </button>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <textarea name="prognosis" class="textarea" placeholder="Possible ailments"></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+
+                            <div class="field is-horizontal invisible" id="tests">
+                                <div class="field-label is-normal">
+                                    <label class="label">Tests:</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <textarea name="tests" class="textarea" placeholder="Recommended tests"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field is-horizontal invisible" id="diagnosis">
+                                <div class="field-label is-normal">
+                                    <label class="label">Diagnosis:</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <textarea name="diagnosis" class="textarea" placeholder="Diagnosis"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field is-horizontal invisible" id="prescription">
+                                <div class="field-label is-normal">
+                                    <label class="label">Prescription:</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <textarea name="prescription" class="textarea" placeholder="Prescription"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field is-horizontal" id="btn-container">
+                                <div class="field-label is-normal">
+                                    <label class="label"></label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field is-expanded">
+                                        <div class="field">
+                                            <button id="btnLab" class="button is-primary">
+                                                Send to Lab
+                                            </button>
+                                            <button id="btnPharmacy" class="button is-primary">
+                                                Send to Pharmacy
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field is-horizontal">
+                                <div class="field-label is-normal">
+                                    <label class="label">Doctor:</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <p class="control is-expanded">
+                                            <input class="input is-primary has-text-primary" type="text" value="Doctor's Name"
+                                                readonly>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field is-horizontal">
+                                <div class="field-label">
+                                    <!-- Left empty for spacing -->
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <button class="button is-primary">
+                                                Submit patient Details
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -5,9 +5,9 @@
  */
 package com.sanatorium.records.controllers;
 
-import com.sanatorium.records.dataRepo.DoctorRepo;
-import com.sanatorium.records.models.DoctorPatient;
+import com.sanatorium.records.dataRepo.PhysicianRepo;
 import com.sanatorium.records.models.PhysicianPatient;
+import com.sanatorium.records.models.Student;
 import java.io.IOException;
 import java.sql.ResultSet;
 import javax.annotation.Resource;
@@ -22,12 +22,10 @@ import javax.sql.DataSource;
  *
  * @author Makali
  */
-@WebServlet("/doctor")
-public class DoctorController extends HttpServlet {
+@WebServlet("/physician")
+public class PhysicianController extends HttpServlet {private static final long serialVersionUID = 1L;
 
-    private static final long serialVersionUID = 1L;
-
-    private DoctorRepo doctorRepo;
+    private PhysicianRepo physicianRepo;
 
     @Resource(name = "jdbc/sanatorium")
     private DataSource dataSource;
@@ -38,7 +36,7 @@ public class DoctorController extends HttpServlet {
 
         // create our student db util ... and pass in the conn pool / datasource
         try {
-            doctorRepo = new DoctorRepo(dataSource);
+            physicianRepo = new PhysicianRepo(dataSource);
         } catch (Exception exc) {
             throw new ServletException(exc);
         }
@@ -49,7 +47,7 @@ public class DoctorController extends HttpServlet {
 
         try {
 
-            addPatient(request, response);
+           addPatient(request, response);
             request.getRequestDispatcher("queue.jsp").forward(request, response);
 
         } catch (Exception exc) {
@@ -63,47 +61,48 @@ public class DoctorController extends HttpServlet {
             throws ServletException, IOException {
 
         String patientID = request.getParameter("patientID");
-        
-        //Attributes
+          
         if (patientID != null && !patientID.isEmpty()) {
             try {
-                ResultSet resultSet = doctorRepo.getPatient(patientID);
-
-                if (resultSet.next()) {
+                ResultSet resultSet = physicianRepo.getPatient(patientID);
+                
+                 if (resultSet.next()) {
 //
                     String weight = resultSet.getString("weight");
                     String height = resultSet.getString("height");
                     String bmi = resultSet.getString("bmi");
-                    String age = resultSet.getString("age");
-                    String temperature = resultSet.getString("temperature");
+                    String waa = resultSet.getString("bmi");
                     
-                    PhysicianPatient physicianPatient = new PhysicianPatient(weight, height, bmi, age, temperature);
-                    request.setAttribute("patient", physicianPatient);
+                     Student student = new Student(weight, height, bmi, waa);
+                    request.setAttribute("patient", student);
 //
                 }
-
-                request.getRequestDispatcher("doctor.jsp").forward(request, response);
+                
+                request.setAttribute("patient", resultSet);
+                
+                request.getRequestDispatcher("physician.jsp").forward(request, response);
             } catch (Exception exc) {
                 throw new ServletException(exc);
             }
         }
-
+        
         request.getRequestDispatcher("queue.jsp").forward(request, response);
     }
 
-    private void addPatient(HttpServletRequest request, HttpServletResponse response) throws Exception {
+   private void addPatient(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-        // read student info from form data
-        String symptoms = request.getParameter("symptoms");
-        String prognosis = request.getParameter("prognosis");
-        String tests = request.getParameter("tests");
-        String diagnosis = request.getParameter("diagnosis");
+       // read student info from form data
+       String height = request.getParameter("height");
+       String weight = request.getParameter("weight");
+       String bmi = request.getParameter("bmi");
+       String age = request.getParameter("age");
+       String temperature = request.getParameter("temperature");
 
-        // create a new patient object
-        DoctorPatient newDoctorPatient = new DoctorPatient(symptoms, prognosis, tests, diagnosis);
+       // create a new patient object
+       PhysicianPatient newPhysicianPatient = new PhysicianPatient(height, weight, bmi, age, temperature);
 
-        // add the student to the database
-        doctorRepo.addPatient(newDoctorPatient);
+       // add the student to the database
+       physicianRepo.addPatient(newPhysicianPatient);
 
-    }
+   }
 }

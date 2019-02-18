@@ -36,7 +36,7 @@ public class StudentRepo {
                         myStmt.setString(1, student.getRegNo());
                         myStmt.setString(2, student.getPatientId());			
                         myStmt.setString(3, student.getName());                       
-                        myStmt.setBoolean(4, student.getGender());
+                        myStmt.setString(4, student.getGender());
 			
 			// execute sql insert
 			myStmt.execute();
