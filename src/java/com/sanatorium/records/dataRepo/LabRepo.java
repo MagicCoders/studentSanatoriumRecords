@@ -1,7 +1,7 @@
+
 package com.sanatorium.records.dataRepo;
 
 import com.sanatorium.records.models.labBean;
-
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.Statement;
@@ -58,7 +58,7 @@ public class LabRepo {
             if (connect != null) {
                 connect.close();   // puts it back in connection pool
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
 
         }
     }

@@ -4,7 +4,7 @@
 <html>
 
 <head>
-    <title>Reception</title>
+    <title>Log In</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" type="text/css" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css"/>
     <link rel="stylesheet" type="text/css" media="all" href="static/css/animate.css" th:href="@{/css/animate.css}"/>
@@ -37,8 +37,8 @@
                     </div>
                     <div class=" column is-four-fifths has-text-centered">
                         <h2 class="is-size-3 has-text-weight-light">Reception Content</h2>
-                        <p class="help is-danger">Data to be filled carefully and with caution. As accurate as
-                            posible</p>
+                        <p class="help is-danger">Data to be filled with caution. As accurate as
+                            possible</p>
                     </div>
                 </div>
                 <hr>

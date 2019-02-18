@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Reception</title>
+    <title>Log In</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" type="text/css" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css"/>
     <link rel="stylesheet" type="text/css" media="all"
@@ -66,7 +66,7 @@
             error.style.color = "red";
             error.style.display = "inline-block";
         } else{
-        window.location.href = 'http://localhost:8084/EgertonSanatorium/reception.jsp';
+        window.location.href = 'http://localhost:8080/EgertonSanatorium/reception.jsp';
         }
         
         count++;

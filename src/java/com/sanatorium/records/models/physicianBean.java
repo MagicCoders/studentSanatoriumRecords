@@ -6,19 +6,17 @@
 package com.sanatorium.records.models;
 
 public class physicianBean {
-    
- private String patienName;
- private String sex;
- private int ID;
- private int age;
- private double weight;
- private double height;
- private double temperature;
- private double BMI;
- private String physicianName;
- public boolean ready;
 
-
+    private String patienName;
+    private String sex;
+    private int ID;
+    private int age;
+    private double weight;
+    private double height;
+    private double temperature;
+    private double BMI;
+    private String physicianName;
+    public boolean ready;
 
     public String getPatienName() {
         return patienName;
@@ -99,6 +97,5 @@ public class physicianBean {
     public void setReady(boolean ready) {
         this.ready = ready;
     }
- 
- 
+
 }

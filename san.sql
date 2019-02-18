@@ -1,6 +1,6 @@
-CREATE DATABASE sanatorium;
+CREATE DATABASE IF NOT EXISTS sanatorium;
 
-use sanatorium;
+USE sanatorium;
 
 CREATE TABLE students(    
     patientID   VARCHAR(250) PRIMARY KEY NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE students(
     fname    VARCHAR(250),
     sname    VARCHAR(250),
     gender  VARCHAR(100),
-    YOB DATE()
+    YOB DATE
 
 );
 
@@ -67,7 +67,7 @@ CREATE TABLE patientTests(
     staffID VARCHAR(250),
     results VARCHAR(250),
     dateTest    VARCHAR(250),
-    FOREIGN KEY (patientID) REFERENCES student(patientID),
+    FOREIGN KEY (patientID) REFERENCES students(patientID),
     FOREIGN KEY (testID) REFERENCES tests(testID),
     FOREIGN KEY (staffID) REFERENCES staff(staffID)
 );

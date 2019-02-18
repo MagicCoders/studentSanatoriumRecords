@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2019.
+ * Erick Ogaro
+ */
+
 package com.sanatorium.records.models;
 
 // Lab Model
@@ -10,9 +15,7 @@ public class Lab {
         private String testResults;
 
         // Constructor
-        public Report(String testType, String testResults) {
-            this.testType = testType;
-            this.testResults = testResults;
+        public Report() {
         }
 
         // Setter and Getter methods for each variable
